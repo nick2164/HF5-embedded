@@ -55,6 +55,11 @@ Dette endpoint, kan kaldes af brættet, og det vil give en token tilbage.
 Dette enpoint KRÆVER en gyldig token. 
 Her vil den give et JSON svar tilbage, med det objekt som er knyttet til den token som der er sndt med, som set i data laget.
 
+<code>PATCH /device/{token}</code>
+
+Dette enpoint KRÆVER en gyldig token. 
+Dette endpoint bruges til at ændre værdien "rotateClockwise", som det enkelte bræt har på sig, når det er indregistreret i API'et.
+
 <code>GET /devices</code>
 
 Dette endpoint vil give en komplet json fil som set i data laget.

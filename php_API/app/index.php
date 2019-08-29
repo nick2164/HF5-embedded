@@ -15,9 +15,18 @@ $app->get('/', function (Request $request, Response $response, $args) {
     return $response;
 });
 
+$app->options('/device/{id}', function (Request $request, Response $response) {
+    return $response->
+    withHeader('Access-Control-Allow-Methods', "OPTIONS, PATCH, GET")->
+    withHeader('Access-Control-Allow-Headers', "Content-Type")->
+    withHeader('Access-Control-Allow-Origin', "*")->
+    withStatus(204);
+});
+
 $app->patch('/device/{id}', function (Request $request, Response $response, $args) {
     if (!$args['id'])
         return $response->withStatus(400);
+
 
     $deviceHandler = new DeviceHandler();
 
@@ -32,7 +41,10 @@ $app->patch('/device/{id}', function (Request $request, Response $response, $arg
 
     if (isset($parsedRequest->rotateClockwise)) {
         if ($deviceHandler->setDeviceRotateClockwise($args['id'], $parsedRequest->rotateClockwise)) {
-            return $response->withStatus(204);
+            return $response->
+            withStatus(204)->
+            withHeader('Access-Control-Allow-Headers', "Origin, X-Requested-With, Content-Type, Accept")->
+            withHeader('Access-Control-Allow-Origin', "*");
         } else {
             return $response->withStatus(400);
         }
@@ -53,7 +65,8 @@ $app->get('/device/{id}', function (Request $request, Response $response, $args)
         return $response->withStatus(403);
 
     $response->getBody()->write(json_encode($deviceHandler->getDeviceFromFile($args['id'])));
-    return $response->withHeader('Content-Type', 'application/json')->
+    return $response->
+    withHeader('Content-Type', 'application/json')->
     withHeader('Access-Control-Allow-Headers', "Origin, X-Requested-With, Content-Type, Accept")->
     withHeader('Access-Control-Allow-Origin', "*");
 });
