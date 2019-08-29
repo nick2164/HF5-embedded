@@ -104,7 +104,7 @@ For at starte webserveren skal denne kommando køres, mens man står i react_web
 | Program        | Version |
 |----------------|---------|
 | node.js        | 12.9.1  |
-| PHP            | 6.10.2  |
+| NPM            | 6.10.2  |
 | Ubuntu         | 19.04   |
 
 ##### Bibiliotek
