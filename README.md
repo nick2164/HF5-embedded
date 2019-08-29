@@ -100,6 +100,13 @@ For at starte webserveren skal denne kommando køres, mens man står i react_web
 
 ``` npm start ```
 
+##### Testet software
+| Program        | Version |
+|----------------|---------|
+| node.js        | 12.9.1  |
+| PHP            | 6.10.2  |
+| Ubuntu         | 19.04   |
+
 ##### Bibiliotek
 Bilbiotekket kan findes inde i package.json filen.
 
