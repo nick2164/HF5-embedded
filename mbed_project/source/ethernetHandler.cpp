@@ -31,7 +31,7 @@ NetworkInterface *ethernetHandler::getNetwork()
  */
 nsapi_error_t ethernetHandler::connectToInterface()
 {
-    printf("Connecting to network\r\n");
+    printf("[NOTICE] Connecting to network\r\n");
     net = NetworkInterface::get_default_instance();
     result = net->connect();
     if (result != 0)

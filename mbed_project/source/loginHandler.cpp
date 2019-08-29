@@ -23,7 +23,7 @@ int loginHandler::login()
 {
     // Make HTTP request to gather Token
     APIHTTPRequestHandler HTTPRequest;
-    std::string json = "{\"identifier\": " + this->identifier + "}";
+    std::string json = "{\"identifier\": \"" + this->identifier + "\"}";
     HttpResponse *response = HTTPRequest.doPOSTRequest("\/token", json);
     HTTPRequest.readResponseAloud(response);
 

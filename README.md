@@ -73,7 +73,7 @@ Denne token skal så bruges til, at hente data ud fra API'et om sit eget bræt. 
 
 
 ##### Webserver
-For at starte webserveren skal denne kommando køres, mens man står i roden af projektet:  
+For at starte webserveren skal denne kommando køres, mens man står i php_API mappen:  
 
 ``` php -S localhost:8888 -t app app/index.php ```
 
@@ -84,6 +84,9 @@ For at starte webserveren skal denne kommando køres, mens man står i roden af 
 | PHP            | 7.2     |
 | Ubuntu         | 19.04   |
 
+##### Bibiliotek
+Bilbiotekket kan findes inde i package.json filen.
+
 ### Præsentations lag
 Dette lag har jeg valgt, at lave en hjemmeside, som kan vise alle registrerede enheder og deres status.
 Det er hertil tiltænkt, hvis der var mere tid, at lave få brættet til at vise rotationsvejen, samt 2 knapper der kan fortælle hvilken vej motoren skal rotere. 
@@ -92,7 +95,13 @@ Det er hertil tiltænkt, hvis der var mere tid, at lave få brættet til at vise
 ##### Generelt
 Jeg har lavet en hjemmeside, som viser en tabel over de indregisterede enheder. Her kan man se hvilke værdier de har, og det er tænkt man skal have mulighed for at rette på det valgte bræts rotation.
 
+##### Webserver
+For at starte webserveren skal denne kommando køres, mens man står i react_website:  
 
+``` npm start ```
+
+##### Bibiliotek
+Bilbiotekket kan findes inde i package.json filen.
 
 # Logbog
 ### 20-08-2019
